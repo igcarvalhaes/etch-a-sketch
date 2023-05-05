@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/cd56cf11a3.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comme&family=Pacifico&display=swap');
+      </style>
     <link rel="stylesheet" href="style.css">
     <title>Etch-A-Sketch</title>
 </head>
@@ -18,11 +18,15 @@
     </div>
     <div id="main-content">
        <div id="left-container">
-        Escolha o tamanho dos quadrados:
-        <button type="button" id="btn-square-per-side">Click me!</button>
+        <button type="button" class ="btn" id="preto">Preto</button>
+        <button type="button" class ="btn" id="multicolor">Modo Multicor</button>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            <div id="squareValue"></div>
+          </div>
        </div>
         <div id="grid-container"></div>
     </div>
-    <div id="footer"><span>By Igor Carvalhaes  <a href="https://github.com/igcarvalhaes/" target="_blank"><i class="fa-brands fa-github fa-beat" style="color: #ffffff;"></i></a></div>
+    <div id="footer"><span>By Igor Carvalhaes  <a href="https://github.com/igcarvalhaes/" target="_blank"><i class="fa-brands fa-github" style="color: #000000;"></i></a></div>
 </body>
 </html>
