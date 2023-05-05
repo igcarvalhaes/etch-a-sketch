@@ -34,7 +34,7 @@ body {
     align-items: center;
     gap: 10px;
     background-color: #F1CFFC;
-
+    font-family: 'Comme', sans-serif;
 }
 
 #grid-container {
@@ -63,14 +63,44 @@ body {
   gap: 10px;
 }
 
-#btn-square-per-side {
+.btn {
   height: 30px;
-  width: 100px;
+  width: 125px;
+  font-family: 'Comme', sans-serif;
+}
+
+#preto {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0px;
+}
+
+#multicolor {
+  background: rgb(63,94,251);
+  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  color: white;
+  border: 0px;
+}
+
+#preto, #multicolor:hover {
+  cursor: pointer;
+}
+
+.slider:hover{
+  cursor: pointer;
+}
+
+#squareValue {
+  text-align: center;
 }
 
 #left-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 #footer {
@@ -79,4 +109,5 @@ body {
   bottom: 0;
   text-align: center;
   margin-bottom: 10px;
+  font-weight: bold;
 }
