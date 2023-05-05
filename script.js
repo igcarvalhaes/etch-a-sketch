@@ -7,18 +7,29 @@ const alturaGridContainer = 500;
 let tamanhoGridSquare;
 let quantidadeGridSquares;
 
-const colors = ["red", "yellow", "blue", "orange", "green", "violet", "black", "white", "gray", "tan" ,"brown"];
-const choiceColors = (Math.floor(Math.random() * colors.length));
-console.log(colors[choiceColors]);
+
+function random_bg_color() {
+    // const colors = ["red", "yellow", "blue", "orange", "green", "violet", "black", "white", "gray", "tan" ,"brown"];
+    // const choiceColors = (Math.floor(Math.random() * colors.length));
+    // return colors[choiceColors];
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + r + "," + g + "," + b + ")";
+    return bgColor;
+}
 
 btnSquarePerSide.addEventListener('click', function (tamanhoGridSquare){
-    tamanhoGridSquare = Number(prompt("Digite o tamanho dos lados do quadrado"));
-    quantidadeGridSquares = tamanhoGridSquare * tamanhoGridSquare;
+    tamanhoGridSquare = Number(prompt("Digite o tamanho dos lados do quadrado."));
+    if (tamanhoGridSquare >= 0 && tamanhoGridSquare <= 100) {
+        quantidadeGridSquares = tamanhoGridSquare * tamanhoGridSquare;
+    } else {
+        alert("Digite um valor entre 0-100 para os quadrados!");
+    }
 
     gridContainer.innerHTML = ""; /* limpa todo o conteúdo dentro do gridcontainer antes de adicionar os quadrados*/
-
     
-    for (i = 0; i<quantidadeGridSquares; i++){
+    for (let i = 0; i<quantidadeGridSquares; i++){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('grid-square');
         gridContainer.appendChild(gridSquare);
@@ -26,17 +37,9 @@ btnSquarePerSide.addEventListener('click', function (tamanhoGridSquare){
         gridSquare.style.height = (alturaGridContainer/tamanhoGridSquare) + "px";
     
         gridSquare.addEventListener('mouseover', (e) => {
-            e.target.style.background = "black";
+            e.target.style.background = random_bg_color();
         });
     }
       
 });
 
-
-
-
-/*
-quantidadeGridSquares = (larguraGridContainer) / tamanhoGridSquare) * 
-                        (alturaGridContainer  / tamanhoGridSquare);
-
-*/
